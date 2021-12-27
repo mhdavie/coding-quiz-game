@@ -69,3 +69,16 @@ function questionClick () {
     }
     getChoices();
 }
+
+function setTime() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = `Time: ${secondsLeft}`;
+        
+        if(secondsLeft === 0 || currentQuestionIndex===myQuestions.length || secondsLeft <= 0) {
+            clearInterval(timerInterval);
+        }
+        
+    }, 1000);
+   
+}
