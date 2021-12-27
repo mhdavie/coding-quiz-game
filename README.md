@@ -9,8 +9,8 @@ This project has been deployed to GitHub Pages.
 ##Links
 
 
-* ['Github Repo'](https://github.com/mhdavie/coding-quiz-game)
-* ['Deployed  Page:'](https://mhdavie.github.io/coding-quiz-game/)
+* [Github Repo](https://github.com/mhdavie/coding-quiz-game)
+* [Deployed  Page](https://mhdavie.github.io/coding-quiz-game/)
 
 
 

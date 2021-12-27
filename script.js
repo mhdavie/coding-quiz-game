@@ -82,3 +82,36 @@ function setTime() {
     }, 1000);
    
 }
+
+
+function quizResults() { //function that shows the results and stores it in the local storage
+    questionEL.innerHTML = " ";
+    choicesEl.innerHTML = ' ';
+    header1El.innerHTML = "All Done!";
+    choicesEl.innerHTML = "Enter your initials: ";
+    finalScore.textContent = `Your score is: ${score}`;
+    timeEl.classList.add("d-none");
+    feedbackEl.classList.add("d-none");
+    finalIDEl.classList.remove("d-none");
+    finalScore.classList.remove("d-none");
+    storeBtnEl.classList.remove("d-none");
+}
+
+function storeResults() {
+    console.log('started')
+    localStorage.setItem(finalIDEl.value, score);
+    reStartBtnEL.classList.remove("d-none");
+    var scoresMessage = document.createElement("div");
+    scoresMessage.innerText = `Results stored! Please view High Scores or refresh the page to start over.`;
+    scoresFeedbackEl.prepend(scoresMessage);
+}
+
+
+
+
+
+
+startBtnEL.addEventListener("click", startQuiz);
+storeBtnEl.addEventListener("click", storeResults);
+highScoresEl.addEventListener("click", renderResults);
+reStartBtnEL.addEventListener("click", refresh);
