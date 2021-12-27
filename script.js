@@ -46,3 +46,26 @@ function getChoices(){
     )
 
 }
+
+function questionClick () {
+    if (this.value != myQuestions[currentQuestionIndex].correctAnswer) {
+        secondsLeft -= 10;
+        if (secondsLeft < 0) {
+            secondsLeft = 0;
+        }
+        
+        timeEl.textContent = time;
+        feedbackEl.innerHTML = "<br>"
+        feedbackEl.textContent = "Incorrect";
+    } else { //if correct
+        feedbackEl.textContent = "Correct";
+        score++;
+        // console.log(score); score works
+    }
+    currentQuestionIndex++;
+    if (currentQuestionIndex===myQuestions.length || secondsLeft <= 0) {
+        quizResults();
+        return;
+    }
+    getChoices();
+}
