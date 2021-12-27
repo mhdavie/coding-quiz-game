@@ -16,3 +16,33 @@ var score = 0;
 var secondsLeft = 15*myQuestions.length;
 var currentQuestionIndex = 0;
 var currentQuestion = myQuestions[currentQuestionIndex];
+
+// first fucntion -- start quiz
+
+function startQuiz () {
+    header1El.innerHTML = " ";
+    resultsEl.innerHTML = " ";
+    startBtnEL = document.getElementById("startBtn");
+    startBtnEL.classList.add("d-none"); //hides the start button - works well
+    getChoices();
+    setTime(); 
+}
+
+function getChoices(){
+    var currentQuestion =myQuestions[currentQuestionIndex];
+    var titleEL = document.getElementById("main");
+    titleEL.textContent =currentQuestion.question;
+    choicesEl.innerHTML = "";
+    currentQuestion.choices.forEach( function (choice, i) {
+        var choiceButton = document.createElement("button");
+        choiceButton.setAttribute("class", "btn btn-success");
+        choiceButton.setAttribute("id","qzBtn");
+        choiceButton.setAttribute("value", i);
+        choiceButton.textContent = i + 1 +". " + choice;
+        choiceButton.onclick = questionClick;
+        choicesEl.appendChild(choiceButton);
+
+    }
+    )
+
+}

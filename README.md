@@ -10,7 +10,7 @@ This project has been deployed to GitHub Pages.
 
 Deployed GitHub Page:
 
-[https://mhdavie.github.io/Code-Quiz-MHD/]
+
 
 
 
