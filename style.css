@@ -20,6 +20,10 @@
 }
 
 
+#finalScore {
+    1rem 1rem 0 3rem!important;
+}
+
 #highScores {
     margin-left: 2%;
     cursor: pointer;
